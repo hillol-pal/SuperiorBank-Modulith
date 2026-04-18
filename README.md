@@ -1,12 +1,18 @@
 # SuperiorBank on Spring Modulith — Let's Build It
 
-
 We're building the Superior Banki Retail Core with Spring Modulith. The system needs to handle:
+
 - Customer account management
 - Domestic and international transfers
 - Real-time fraud detection
 - Loan lifecycle management
 - Multi-channel notifications (SMS, email, push)
+
+### Tech Stack
+
+java 17
+
+Springboot 3.4
 
 ### Project Structure
 
@@ -63,4 +69,10 @@ superiorbank-modulith/
             └── AccountLinkedLoanListener.java  ← Listens to account events
 ```
 
-Modules communicate through events, not through direct dependencies.The `notification` module does not know about `transaction` internals. It only knows that a `TransactionCompletedEvent` was published. 
+Modules communicate through events, not through direct dependencies.The `notification` module does not know about `transaction` internals. It only knows that a `TransactionCompletedEvent` was published.
+
+### Local Compile and run
+
+`mvn clean install`
+
+`mvn spring-boot:run`
