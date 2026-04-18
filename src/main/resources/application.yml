@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: superior-bank
+  datasource:
+    url: jdbc:postgresql://localhost:5432/superiorbank
+    username: ${DB_USERNAME:superiorbank}
+    password: ${DB_PASSWORD:superiorbank}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  modulith:
+    events:
+      jdbc:
+        schema-initialization:
+          enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,modulith
+  endpoint:
+    health:
+      show-details: always
+
+server:
+  port: 8080
