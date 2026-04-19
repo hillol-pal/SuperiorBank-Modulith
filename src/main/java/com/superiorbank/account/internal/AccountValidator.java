@@ -33,6 +33,6 @@ public class AccountValidator {
     }
 
     private boolean isSupportedCurrency(String currency) {
-        return "GBP".equals(currency) || "EUR".equals(currency) || "USD".equals(currency);
+        return "GBP".equals(currency) || "EUR".equals(currency) || "USD".equals(currency) || "INR".equals(currency);
     }
 }

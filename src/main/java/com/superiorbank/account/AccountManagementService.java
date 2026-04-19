@@ -43,14 +43,14 @@ public class AccountManagementService {
     }
 
     @Transactional
-    public Account openAccount(String customerId, String currency) {
+    public Account openAccount(String customerId, String currency, String customerEmail) {
         accountValidator.validateNewAccount(customerId, currency);
 
         var entity = AccountJpaEntity.open(customerId, currency);
         var saved = accountRepository.save(entity);
         var domain = AccountMapper.toDomain(saved);
 
-        events.publishEvent(new AccountOpenedEvent(domain.id(), customerId, currency));
+        events.publishEvent(new AccountOpenedEvent(domain.id(), customerId, currency, customerEmail));
 
         log.info("Opened account {} for customer {}", domain.accountNumber(), customerId);
         return domain;

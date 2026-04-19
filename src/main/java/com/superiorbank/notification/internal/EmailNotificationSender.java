@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 class EmailNotificationSender {
-
+     // Integration point: replace with JavaMailSender, SendGrid, AWS SES, etc.
     void send(EmailContent content) {
-        // Integration point: replace with JavaMailSender, SendGrid, AWS SES, etc.
+       
         log.info("[EMAIL] To={} Subject={}", content.to(), content.subject());
     }
 

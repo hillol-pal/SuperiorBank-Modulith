@@ -20,7 +20,7 @@ public class AccountJpaEntity {
     @Id
     private UUID id;
 
-    @Column(name = "account_number", unique = true, nullable = false, length = 20)
+    @Column(name = "account_number", unique = true, nullable = false, length = 50)
     private String accountNumber;
 
     @Column(name = "customer_id", nullable = false, length = 50)

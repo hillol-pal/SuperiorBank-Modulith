@@ -32,4 +32,17 @@ class ModularityTests {
             .writeIndividualModulesAsPlantUml()
             .writeAggregatingDocument();
     }
+
+    @Test
+    void createApplicationModuleModel() {
+        modules.forEach(System.out::println);
+    }
+
+    @Test
+    void createModuleDocumentation() {
+      ApplicationModules modules = ApplicationModules.of(SuperiorBankApplication.class);
+      new Documenter(modules)
+      .writeDocumentation()
+      .writeIndividualModulesAsPlantUml();
+    }
 }
