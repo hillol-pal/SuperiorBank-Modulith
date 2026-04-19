@@ -76,3 +76,18 @@ Modules communicate through events, not through direct dependencies.The `notific
 `mvn clean install`
 
 `mvn spring-boot:run`
+
+### API
+
+POST api/accounts
+`curl --location 'http://localhost:8080/api/accounts' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "customerId": "CUST12345",
+    "currency": "INR",
+    "customerEmail": "customer@example.com"
+}'`
+
+### Notes
+
+This repo is under development
